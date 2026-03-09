@@ -11,35 +11,12 @@
 
 💎 **Easy-to-Use**: One-click to deploy and you're ready to go.
 
-## ✨ Features
-
-<table align="center">
-  <tr align="center">
-    <th><p align="center">📈 24/7 Real-Time Market Analysis</p></th>
-    <th><p align="center">🚀 Full-Stack Software Engineer</p></th>
-    <th><p align="center">📅 Smart Daily Routine Manager</p></th>
-    <th><p align="center">📚 Personal Knowledge Assistant</p></th>
-  </tr>
-  <tr>
-    <td align="center"><p align="center"><img src="case/search.gif" width="180" height="400"></p></td>
-    <td align="center"><p align="center"><img src="case/code.gif" width="180" height="400"></p></td>
-    <td align="center"><p align="center"><img src="case/scedule.gif" width="180" height="400"></p></td>
-    <td align="center"><p align="center"><img src="case/memory.gif" width="180" height="400"></p></td>
-  </tr>
-  <tr>
-    <td align="center">Discovery • Insights • Trends</td>
-    <td align="center">Develop • Deploy • Scale</td>
-    <td align="center">Schedule • Automate • Organize</td>
-    <td align="center">Learn • Memory • Reasoning</td>
-  </tr>
-</table>
-
 ## 📦 Install
 
 **Install from source** (latest features, recommended for development)
 
 ```bash
-git clone https://github.com/HKUDS/tigerclaw.git
+git clone https://github.com/happytiger/tigerclaw.git
 cd tigerclaw
 pip install -e .
 ```
@@ -1010,61 +987,8 @@ docker run -v ~/.tigerclaw:/root/.tigerclaw --rm tigerclaw agent -m "Hello!"
 docker run -v ~/.tigerclaw:/root/.tigerclaw --rm tigerclaw status
 ```
 
-## 🐧 Linux Service
-
-Run the gateway as a systemd user service so it starts automatically and restarts on failure.
-
-**1. Find the tigerclaw binary path:**
-
-```bash
-which tigerclaw   # e.g. /home/user/.local/bin/tigerclaw
-```
-
-**2. Create the service file** at `~/.config/systemd/user/tigerclaw-gateway.service` (replace `ExecStart` path if needed):
-
-```ini
-[Unit]
-Description=tigerclaw Gateway
-After=network.target
-
-[Service]
-Type=simple
-ExecStart=%h/.local/bin/tigerclaw gateway
-Restart=always
-RestartSec=10
-NoNewPrivileges=yes
-ProtectSystem=strict
-ReadWritePaths=%h
-
-[Install]
-WantedBy=default.target
-```
-
-**3. Enable and start:**
-
-```bash
-systemctl --user daemon-reload
-systemctl --user enable --now tigerclaw-gateway
-```
-
-**Common operations:**
-
-```bash
-systemctl --user status tigerclaw-gateway        # check status
-systemctl --user restart tigerclaw-gateway       # restart after config changes
-journalctl --user -u tigerclaw-gateway -f        # follow logs
-```
-
-If you edit the `.service` file itself, run `systemctl --user daemon-reload` before restarting.
-
-> **Note:** User services only run while you are logged in. To keep the gateway running after logout, enable lingering:
->
-> ```bash
-> loginctl enable-linger $USER
-> ```
 
 ## 📁 Project Structure
-
 ```
 tigerclaw/
 ├── agent/          # 🧠 Core agent logic
@@ -1085,43 +1009,3 @@ tigerclaw/
 └── cli/            # 🖥️ Commands
 ```
 
-## 🤝 Contribute & Roadmap
-
-PRs welcome! The codebase is intentionally small and readable. 🤗
-
-**Roadmap** — Pick an item and [open a PR](https://github.com/HKUDS/tigerclaw/pulls)!
-
-- [ ] **Multi-modal** — See and hear (images, voice, video)
-- [ ] **Long-term memory** — Never forget important context
-- [ ] **Better reasoning** — Multi-step planning and reflection
-- [ ] **More integrations** — Calendar and more
-- [ ] **Self-improvement** — Learn from feedback and mistakes
-
-### Contributors
-
-<a href="https://github.com/HKUDS/tigerclaw/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=HKUDS/tigerclaw&max=100&columns=12&updated=20260210" alt="Contributors" />
-</a>
-
-
-## ⭐ Star History
-
-<div align="center">
-  <a href="https://star-history.com/#HKUDS/tigerclaw&Date">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=HKUDS/tigerclaw&type=Date&theme=dark" />
-      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=HKUDS/tigerclaw&type=Date" />
-      <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=HKUDS/tigerclaw&type=Date" style="border-radius: 15px; box-shadow: 0 0 30px rgba(0, 217, 255, 0.3);" />
-    </picture>
-  </a>
-</div>
-
-<p align="center">
-  <em> Thanks for visiting ✨ tigerclaw!</em><br><br>
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=HKUDS.tigerclaw&style=for-the-badge&color=00d4ff" alt="Views">
-</p>
-
-
-<p align="center">
-  <sub>tigerclaw is for educational, research, and technical exchange purposes only</sub>
-</p>
