@@ -1,9 +1,12 @@
 🐈 **tigerclaw** is an **ultra-lightweight** personal AI assistant inspired by [OpenClaw](https://github.com/openclaw/openclaw).
 
+## Contact me:
+happytiger81@hotmail.com
+
 
 ## Key Features of tigerclaw:
 
-🪶 **Ultra-Lightweight**: Just ~4,000 lines of core agent code — 99% smaller than Clawdbot.
+🪶 **Ultra-Lightweight**: Just thousands lines of core agent code — 99% smaller than Clawdbot.
 
 🔬 **Research-Ready**: Clean, readable code that's easy to understand, modify, and extend for research.
 
