@@ -1,4 +1,4 @@
-🐈 **tigerclaw** is an **ultra-lightweight** personal AI assistant inspired by [OpenClaw](https://github.com/openclaw/openclaw).
+**tigerclaw** is an python version of [OpenClaw](https://github.com/openclaw/openclaw).
 
 ## Contact me:
 happytiger81@hotmail.com
